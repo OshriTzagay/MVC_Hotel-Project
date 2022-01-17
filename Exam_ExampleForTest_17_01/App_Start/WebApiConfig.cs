@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace Exam_ExampleForTest_17_01
 {
@@ -10,7 +11,8 @@ namespace Exam_ExampleForTest_17_01
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
-
+            var cors = new EnableCorsAttribute("*", "*", "*");
+            config.EnableCors(cors);
             // Web API routes
             config.MapHttpAttributeRoutes();
 
